@@ -1,0 +1,52 @@
+$top-color:#fd12cc;
+$top-font:"lato",sans-serif;
+
+%name-item{
+    font-size: 22px;
+    padding: 10px;
+    background-color: rgba($top-color, 0.6);
+}
+
+.test{
+    text-align: center;
+}
+.menu{
+    float: right;
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        display: inline-block;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+.description{
+    color: #fff;
+    // амперсант как своебразное this в функции указывает на радительский тег или класс
+    &:hover{
+        color: $top-color;
+        font-family: $top-font;
+    }
+}
+.tools{
+    &-description{
+        text-align: left;
+    }
+    &-item{
+        float: left;
+    }
+}
+.item-1{
+    color: #ccc;
+    @extend %name-item
+}
+.item-2{
+    color: #fff;
+}
+.item-3{
+    color: #000;
+}

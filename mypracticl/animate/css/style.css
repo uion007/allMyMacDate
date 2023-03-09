@@ -1,0 +1,136 @@
+.wrapper .mavic {
+  width: 640px;
+  height: 400px;
+  background-color: #76aa31;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.wrapper .mavic__title {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 24px;
+  font-family: sans-serif;
+  color: #fff;
+}
+.wrapper .mavic:hover .mavic-img {
+  animation-name: mavic-on;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+.wrapper .mavic-img {
+  animation-name: mavic-off;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+.wrapper .mavic::after,
+.wrapper .mavic::before {
+  content: "";
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  animation-duration: 1s;
+}
+.wrapper .mavic::after {
+  background-image: url(../img/iphone-front.png);
+  right: 21%;
+  transform: translate(0, 200%) rotate(20deg);
+  animation-name: front-off;
+}
+.wrapper .mavic::before {
+  background-image: url(../img/iphone-back.png);
+  left: 21%;
+  transform: translate(0, 200%) rotate(-20deg);
+  animation-name: back-off;
+}
+.wrapper .mavic:hover::after,
+.wrapper .mavic:hover::before {
+  animation-duration: 1s;
+}
+.wrapper .mavic:hover::after {
+  animation-name: front-on;
+  animation-fill-mode: forwards;
+}
+.wrapper .mavic:hover::before {
+  animation-name: back-on;
+  animation-fill-mode: forwards;
+}
+@keyframes mavic-on {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}
+@keyframes mavic-off {
+  0% {
+    transform: translateY(-200%);
+  }
+  60% {
+    transform: translateY(30px);
+  }
+  70% {
+    transform: translateY(-30px);
+  }
+  80% {
+    transform: translateY(15px);
+  }
+  90% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes front-on {
+  0% {
+    right: 21%;
+    transform: translate(0, 200%) rotate(20deg);
+  }
+  60% {
+    transform: translate(0, 0%) rotate(0deg);
+    right: 21%;
+  }
+  100% {
+    transform: translate(0, 0%) rotate(0deg);
+    right: 31%;
+  }
+}
+@keyframes front-off {
+  0% {
+    transform: translate(0, 0%) rotate(0deg);
+  }
+  100% {
+    right: 21%;
+    transform: translate(0, 200%) rotate(20deg);
+  }
+}
+@keyframes back-on {
+  0% {
+    left: 21%;
+    transform: translate(0, 200%) rotate(-20deg);
+  }
+  60% {
+    transform: translate(0, 0%) rotate(0deg);
+    left: 21%;
+  }
+  100% {
+    transform: translate(0, 0%) rotate(0deg);
+    left: 35%;
+  }
+}
+@keyframes back-off {
+  0% {
+    transform: translate(0, 0%) rotate(0deg);
+  }
+  100% {
+    left: 21%;
+    transform: translate(0, 200%) rotate(-20deg);
+  }
+}/*# sourceMappingURL=style.css.map */

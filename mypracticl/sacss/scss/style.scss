@@ -1,0 +1,12 @@
+@import "./first";
+$font-stack:sans-serif;
+$primary-color:#fff;
+
+
+
+body{
+    font: $font-stack;
+    background-color: aqua;
+    padding: 20px;
+    margin: 40%;
+}
